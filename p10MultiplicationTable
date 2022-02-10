@@ -1,0 +1,23 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.lab;
+
+import java.util.Scanner;
+
+public class p10MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = Integer.parseInt(scanner.nextLine());
+
+        System.out.printf(number + " X 1 = %d\n", number );
+        System.out.printf(number + " X 2 = %d\n", number * 2 );
+        System.out.printf(number + " X 3 = %d\n", number * 3 );
+        System.out.printf(number + " X 4 = %d\n", number * 4 );
+        System.out.printf(number + " X 5 = %d\n", number * 5 );
+        System.out.printf(number + " X 6 = %d\n", number * 6 );
+        System.out.printf(number + " X 7 = %d\n", number * 7 );
+        System.out.printf(number + " X 8 = %d\n", number * 8 );
+        System.out.printf(number + " X 9 = %d\n", number * 9 );
+        System.out.printf(number + " X 10 = %d\n", number * 10 );
+
+    }
+}
