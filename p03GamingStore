@@ -1,0 +1,71 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.MoreExe;
+
+import java.util.Scanner;
+
+public class p03GamingStore {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String name = scanner.nextLine();
+        double budget = Double.parseDouble(name);
+        double total = budget;
+        double totalSpend = 0;
+        double price = 0;
+
+        while (true) {
+
+            if (budget == 0) {
+                System.out.println("Out of money!");
+                break ;
+            }
+
+            name = scanner.nextLine();
+
+            if("Game time".equalsIgnoreCase(name)) {
+                break;
+            }
+
+            switch (name) {
+                case "OutFall 4":
+                    price = 39.99;
+                    break;
+                case "CS: OG":
+                    price = 15.99;
+                    break;
+                case "Zplinter Zell":
+                    price = 19.99;
+                    break;
+                case "Honored 2":
+                    price = 59.99;
+                    break;
+                case "RoverWatch":
+                    price = 29.99;
+                    break;
+                case "RoverWatch Origins Edition":
+                    price = 39.99;
+                    break;
+                default:
+                    System.out.println("Not Found");
+                    break;
+            }
+
+            if (budget >= price && price > 0) {
+
+                totalSpend += price;
+                budget -= price;
+                System.out.printf("Bought %s%n", name);
+
+            }else if (budget < price && price > 0) {
+                System.out.println("Too Expensive");
+            }
+
+            price = 0;
+
+        }
+
+        if (budget > 0) {
+            System.out.printf("Total spent: $%.2f. Remaining: $%.2f", totalSpend, (total - totalSpend));
+        }
+
+    }
+}
