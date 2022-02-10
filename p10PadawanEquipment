@@ -1,0 +1,31 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.exe;
+
+import java.util.Scanner;
+
+public class p10PadawanEquipment {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //•	The amount of money George Lucas has – the floating-point number in the range [0.00…1,000.00].
+        double amountOfMoney = Double.parseDouble(scanner.nextLine());
+        //•	The count of students – integer in the range [0…100].
+        int countOfStudents = Integer.parseInt(scanner.nextLine());
+        //•	The price of lights for a single saber – the floating-point number in the range [0.00…100.00].
+        double priceOfLights = Double.parseDouble(scanner.nextLine());
+        //•	The price of robes for a single robe – the floating-point number in the range [0.00…100.00].
+        double priceOfRobes = Double.parseDouble(scanner.nextLine());
+        //•	The price of belts for a single belt – the floating-point number in the range [0.00…100.00].
+        double priceOfBelts = Double.parseDouble(scanner.nextLine());
+
+
+        double totalResult = (priceOfLights * (Math.ceil(countOfStudents + (countOfStudents * 0.1))))
+                + (priceOfRobes * countOfStudents)
+                + (priceOfBelts * (countOfStudents - (countOfStudents / 6)));
+
+        if (amountOfMoney >= totalResult){
+            System.out.printf("The money is enough - it would cost %.2flv.", totalResult);
+        }else {
+            System.out.printf("George Lucas will need %.2flv more.", totalResult - amountOfMoney);
+        }
+    }
+}
