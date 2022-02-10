@@ -1,0 +1,29 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.exe;
+
+import java.util.Scanner;
+
+public class p09Orders {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int counter = Integer.parseInt(scanner.nextLine());
+        double total = 0;
+
+        for (int i = 1; i <= counter; i++){
+
+        //o	Price per capsule - floating-point number in range [0.00…1000.00]
+        double pricePerCapsule = Double.parseDouble(scanner.nextLine());
+        //o	Days – integer in range [1…31]
+        double days = Double.parseDouble(scanner.nextLine());
+        //o	Capsules count - integer in range [0…2000]
+        double capsulesCount = Double.parseDouble(scanner.nextLine());
+
+        double orderPrice = pricePerCapsule * days * capsulesCount;
+        total += orderPrice;
+
+        System.out.printf("The price for the coffee is: $%.2f\n", orderPrice);
+
+        }
+        System.out.printf("Total: $%.2f", total);
+    }
+}
