@@ -1,0 +1,57 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.exe;
+
+import java.util.Scanner;
+
+public class p03Vacation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int peopleCount = Integer.parseInt(scanner.nextLine());
+        String typeOfGroup = scanner.nextLine();
+        String days = scanner.nextLine();
+
+        double price = 0;
+
+        switch (days){
+            case "Friday":
+                if (typeOfGroup.equals("Students")){
+                    price = 8.45;
+                }else if (typeOfGroup.equals("Business")){
+                    price = 10.90;
+                }else if (typeOfGroup.equals("Regular")){
+                    price = 15;
+                }break;
+            case "Saturday":
+                if (typeOfGroup.equals("Students")){
+                    price = 9.80;
+                }else if (typeOfGroup.equals("Business")){
+                    price = 15.60;
+                }else if (typeOfGroup.equals("Regular")){
+                    price = 20;
+                }break;
+            case "Sunday":
+                if (typeOfGroup.equals("Students")){
+                    price = 10.46;
+                }else if (typeOfGroup.equals("Business")){
+                    price = 16;
+                }else if (typeOfGroup.equals("Regular")){
+                    price = 22.50;
+                }
+                break;
+        }
+        double priceUpdate = peopleCount * price;
+        double totalPrice = 0;
+
+        if (typeOfGroup.equals("Students") && peopleCount >= 30){
+            totalPrice = priceUpdate * 0.85;
+        }else if (typeOfGroup.equals("Business") && peopleCount >= 100){
+            totalPrice = priceUpdate - (10 * price);
+        }else if (typeOfGroup.equals("Regular") && peopleCount >= 10 && peopleCount <= 20){
+            totalPrice = priceUpdate * 0.95;
+        }else {
+            totalPrice=priceUpdate;
+        }
+        System.out.printf("Total price: %.2f", totalPrice);
+
+    }
+}
