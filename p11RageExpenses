@@ -1,0 +1,35 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.exe;
+
+import java.util.Scanner;
+
+public class p11RageExpenses {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //•	On the first input line - lost games count – integer in the range [0, 1000].
+        int lostGames = Integer.parseInt(scanner.nextLine());
+        //•	On the second line – headset price - the floating-point number in the range [0, 1000].
+        double headsetPrice = Double.parseDouble(scanner.nextLine());
+        //•	On the third line – mouse price - the floating-point number in the range [0, 1000].
+        double mousePrice = Double.parseDouble(scanner.nextLine());
+        //•	On the fourth line – keyboard price - the floating-point number in the range [0, 1000].
+        double keyboardPrice = Double.parseDouble(scanner.nextLine());
+        //•	On the fifth line – display price - the floating-point number in the range [0, 1000].
+        double displayPrice = Double.parseDouble(scanner.nextLine());
+
+        //Every second lost game, Peter trashes his headset.
+        int countOfHeadset = lostGames / 2;
+        //Every third lost game, Peter trashes his mouse.
+        int countOfMouse = lostGames / 3;
+        //When Peter trashes both his mouse and headset in the same lost game, he also trashes his keyboard.
+        int countOfKeyboard = lostGames / 6;
+        //Every second time, when he trashes his keyboard, he also trashes his display.
+        int countOfDisplay = lostGames / 12;
+
+        double result = (countOfHeadset * headsetPrice)
+                    + (countOfMouse * mousePrice)
+                    + (countOfKeyboard * keyboardPrice)
+                    + (countOfDisplay * displayPrice);
+        System.out.printf("Rage expenses: %.2f lv.", result);
+    }
+}
