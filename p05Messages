@@ -1,0 +1,29 @@
+package L1BasicSyntaxConditionalStatementsAndLoops.MoreExe;
+
+import java.util.Scanner;
+
+public class p05Messages {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int letters = Integer.parseInt(scanner.nextLine());
+        String word = "";
+
+        for (int i = 1; i <= letters; i++)
+        {
+            String currentNum = scanner.nextLine();
+            if (currentNum == "0")
+            {
+                word += " ";
+                continue;
+            }
+            int length = currentNum.length();
+            int firstDigit = currentNum.charAt(0);
+            if (firstDigit > 7)
+                word += (char)(97 + (firstDigit -2)*3 + length);
+            else
+                word += (char)(97 + (firstDigit - 2) * 3 + length - 1);
+        }
+        System.out.println(word);
+    }
+}
